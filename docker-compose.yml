@@ -1,0 +1,27 @@
+version: '2.1'
+
+services:
+  web:
+    image: nosqli-labs
+    hostname: nosqliweb
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    networks:
+      - nosqli-network
+    ports:
+      - "8080:80"
+  mongo:
+    container_name: nosqli-mongodb
+    image: mongo:3.4.1
+    build:
+      context: .
+      dockerfile: Dockerfile-mongo
+    networks:
+      - nosqli-network
+    ports:
+      - "27017:27017"
+
+networks:
+  nosqli-network:
+    driver: bridge
