@@ -19,4 +19,5 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
 
 COPY . /var/www/html
 RUN sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/user_lookup.php && \
-	sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/populate_db.php
+	sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/populate_db.php && \
+	sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/guess_the_key.php
