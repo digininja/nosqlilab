@@ -44,7 +44,7 @@
 			] );
 
 			try {
-				$mongo_driver = new MongoDB\Driver\Manager;
+				$mongo_driver = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 				$cursor = $mongo_driver->executeCommand( 'sans', $cmd );
 				$response = $cursor->toArray()[0];
 
