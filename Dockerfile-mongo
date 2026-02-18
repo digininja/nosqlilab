@@ -1,3 +1,3 @@
-FROM mongo:latest
-MAINTAINER jose nazario <jose@monkey.org>
-LABEL version="1.0" description="nosqli-labs Docker image"
+# Last minor version that supported eval
+FROM docker.io/library/mongo:4.0-xenial
+LABEL version="1.0" description="nosqli-labs mongo image" image.authors="jose@monkey.org"
