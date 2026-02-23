@@ -21,4 +21,5 @@ COPY . /var/www/html
 RUN : \
 	&& sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/user_lookup.php \
 	&& sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/populate_db.php \
-	&& sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/guess_the_key.php
+	&& sed -i s/"localhost:27017"/"mongo:27017"/g /var/www/html/guess_the_key.php \
+	&& sed -i '1s/^/ServerName nosqlilab\n/' /etc/apache2/sites-enabled/000-default.conf
